@@ -76,7 +76,18 @@ public class Entries {
 
         public Entries build() {
             if (startedDateTime == null || request == null || response == null || cache == null) {
-                throw new NullPointerException();
+                StringBuilder sb = new StringBuilder();
+                sb.append("startedDateTime=");
+                sb.append(startedDateTime);
+                sb.append(" request=");
+                sb.append(request);
+                sb.append(" request=");
+                sb.append(response);
+                sb.append(" response=");
+                sb.append(request);
+                sb.append(" cache=");
+                sb.append(cache);
+                throw new NullPointerException(new String(sb));
             }
             return new Entries(this);
         }

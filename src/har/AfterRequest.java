@@ -46,7 +46,7 @@ public class AfterRequest {
                 sb.append(lastAccess);
                 sb.append(" eTag=");
                 sb.append(eTag);
-                throw new NullPointerException();
+                throw new NullPointerException(new String(sb));
             }
             return new AfterRequest(this);
         }

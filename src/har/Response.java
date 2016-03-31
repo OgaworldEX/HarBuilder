@@ -79,7 +79,20 @@ public class Response {
         public Response build() {
             if (statusText == null || httpVersion == null || cookies == null || headers == null || content == null
                     || redirectURL == null) {
-                throw new NullPointerException();
+                StringBuilder sb = new StringBuilder();
+                sb.append("statusText=");
+                sb.append(statusText);
+                sb.append(" httpVersion=");
+                sb.append(httpVersion);
+                sb.append(" cookies=");
+                sb.append(cookies);
+                sb.append(" headers=");
+                sb.append(headers);
+                sb.append(" content=");
+                sb.append(content);
+                sb.append(" redirectURL=");
+                sb.append(redirectURL);
+                throw new NullPointerException(new String(sb));
             }
             return new Response(this);
         }
